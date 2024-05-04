@@ -1,12 +1,12 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    var name = request.name;
-    var birthday = request.birthday;
+    let name = request.name;
+    let birthday = request.birthday;
     createCalendarEvent(name, birthday);
   });
   
   function createCalendarEvent(name, birthday) {
     chrome.identity.getAuthToken({interactive: true}, function(token) {
-      var event = {
+      let event = {
         summary: name + "'s Birthday",
         start: {
           date: birthday

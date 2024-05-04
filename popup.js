@@ -1,8 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var addButton = document.getElementById('addButton');
+    let addButton = document.getElementById('addButton');
     addButton.addEventListener('click', function() {
-      var name = document.getElementById('name').value;
-      var birthday = document.getElementById('birthday').value;
-      chrome.runtime.sendMessage({name: name, birthday: birthday});
+      let name = document.getElementById('name').value;
+      let birthday = document.getElementById('birthday').value;
+
+      if (name.trim() === '' || birthday.trim() === '') {
+        showError('Please enter both name and birthday.');
+      } else {
+        chrome.runtime.sendMessage({name: name, birthday: birthday});
+      }
+
     });
   });
+  
+  function showError(message) {
+    let errorElement = document.createElement('p');
+    errorElement.className = 'error';
+    errorElement.style.color = 'red';
+    errorElement.textContent = message;
+    document.body.appendChild(errorElement);
+    setTimeout(function() {
+      errorElement.remove();
+    }, 3000);
+  }
