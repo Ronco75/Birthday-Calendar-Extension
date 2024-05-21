@@ -38,9 +38,3 @@ The Birthday Calendar Extension requires the following permissions:
 - `storage`: To store and retrieve the list of birthdays.
 
 These permissions are essential for the extension to function properly and securely.
-
-## Feedback and Support
-
-If you encounter any issues, have suggestions, or need assistance, please [open an issue](https://github.com/your-username/birthday-calendar-extension/issues) on the GitHub repository.
-
-We appreciate your feedback and are committed to improving the extension based on user input.
