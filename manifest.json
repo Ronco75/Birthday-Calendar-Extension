@@ -1,12 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Birthday Calendar Extension",
     "version": "1.0",
     "description": "Adds birthdays to Google Calendar",
     "permissions": [
       "identity",
-      "https://www.googleapis.com/*"
+      "https://www.googleapis.com/*",
+      "storage"
     ],
+    "options_page": "index.html",
     "browser_action": {
       "default_popup": "popup.html"
     },
